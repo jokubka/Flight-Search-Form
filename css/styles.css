@@ -1,0 +1,342 @@
+body,
+body * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #09314c;
+}
+
+.app-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #09314c;
+}
+
+.search-container {
+  padding: 30px 20px;
+  background-color: #00000020;
+}
+
+.search-bar {
+  display: flex;
+}
+
+/* FORM INPUTS */
+
+.form-radio-btn-group {
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.form-radio-btn-group > label {
+  color: #fff;
+  font-size: 18px;
+  margin-right: 15px;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+.form-field {
+  position: relative;
+  margin-right: 2px;
+}
+
+.form-field input {
+  font-size: 16px;
+  line-height: 32px;
+  color: #262626;
+  padding: 10px 40px 10px 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.form-field__point-a,
+.form-field__point-b,
+.click-area__passenger-input {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.form-field__date-departure,
+.form-field__date-return {
+  width: 153px;
+}
+
+input.click-area__passenger-input {
+  max-width: 160px;
+  padding-left: 40px;
+  background-color: #fff;
+  pointer-events: none;
+}
+
+.passenger-select-box {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  padding: 15px 15px 0 15px;
+  box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+.passenger-select-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.passenger-select-row label {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.passenger-select-row span {
+  font-size: 12px;
+  color: #a9a9a9;
+}
+
+.passenger-submit-row {
+  border-top: 1px solid #e8e8e8;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.passenger-submit-btn {
+  color: #fff;
+  background-color: #ff912e;
+  border-radius: 2px;
+  padding: 7px 12px;
+  margin: 10px 15px;
+  cursor: pointer;
+}
+
+.passenger-counter input {
+  width: 20px;
+  padding: 0;
+  text-align: center;
+}
+
+.input-icon {
+  font-size: 20px;
+  color: #888;
+  position: absolute;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.counter-icon {
+  font-size: 18px;
+  color: #c0c0c0;
+  cursor: pointer;
+}
+
+.fa-map-marker-alt {
+  top: 14px;
+  left: 8px;
+}
+
+.fa-exchange-alt {
+  top: 14px;
+  right: 15px;
+  pointer-events: auto;
+}
+
+.fa-calendar-alt {
+  font-size: 18px;
+  top: 16px;
+  left: 8px;
+}
+
+.fa-times-circle {
+  font-size: 18px;
+  color: #f66;
+  top: 17px;
+  right: 10px;
+  pointer-events: auto;
+}
+
+.fa-users {
+  font-size: 18px;
+  top: 16px;
+  left: 8px;
+}
+
+.fa-chevron-down {
+  font-size: 18px;
+  top: 17px;
+  right: 10px;
+}
+
+/* TOOTLTIP FOR PASSENGERS INPUT */
+
+.passenger-tooltip {
+  position: absolute;
+  background-color: #e8e8e8;
+  box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.75);
+  padding: 10px 10px;
+  bottom: calc(100% + 10px);
+  left: -20px;
+  z-index: 1;
+}
+
+.passenger-tooltip span {
+  display: block;
+  font-size: 12px;
+}
+
+.passenger-tooltip::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #e8e8e8;
+  position: absolute;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+/* ERORR TOOLTIP */
+
+.point-a-tooltip,
+.point-b-tooltip {
+  position: absolute;
+  font-size: 12px;
+  background-color: #f74141;
+  color: #fff;
+  padding: 4px 4px;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.point-a-tooltip::after,
+.point-b-tooltip::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #f74141;
+  position: absolute;
+  bottom: -4px;
+  left: 12px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+/* AUTOCOMPLETE BOX */
+
+.form-field__autocomplete-box {
+  position: absolute;
+  width: 120%;
+  background-color: #f0f0f0;
+  box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+.form-field__autocomplete-box ul li {
+  list-style: none;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.form-field__autocomplete-box > ul > li li {
+  border-bottom: none;
+}
+
+.form-field__autocomplete-box li a {
+  display: block;
+  padding: 10px 10px;
+}
+
+.form-field__autocomplete-box li a.subitem {
+  padding-left: 20px;
+}
+.form-field__autocomplete-box li a * {
+  font-size: 12px;
+  color: #666;
+  font-weight: bold;
+  display: inline;
+}
+
+.form-field__autocomplete-box .flag {
+  margin-top: 2px;
+  margin-right: 5px;
+}
+
+.form-field__autocomplete-box li .details {
+  font-weight: 100;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 22px;
+}
+
+.form-field__autocomplete-box > ul > li:hover {
+  background-color: #f8deab;
+}
+
+.form-field__autocomplete-box li.contains-subitems {
+  padding-bottom: 0;
+}
+
+.form-field__autocomplete-box li.contains-subitems:hover .ac-airport {
+  background-color: #fff4ee;
+}
+
+.form-field__autocomplete-box .ac-airport li:hover {
+  background-color: #f8deab;
+}
+
+.form-submit-btn {
+  font-size: 18px;
+  line-height: 32px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #ff912e;
+  width: 145px;
+  border: none;
+  cursor: pointer;
+}
+
+/* DATEPICKER CUSTOM CSS */
+
+.qs-event span {
+  color: #6d9ab9;
+}
+
+.qs-datepicker .qs-event::after {
+  width: 0;
+  height: 0;
+}
+
+.qs-datepicker
+  .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
+  background-color: #ff912e;
+}
+
+.qs-datepicker-container::after {
+  content: "• Tiesioginiai skrydžiai";
+  color: #6d9ab9;
+  font-size: 12px;
+  padding: 7px 0 7px 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.qs-datepicker .qs-square.qs-active {
+  background: #ff912e;
+}
+
+.hide {
+  display: none;
+}

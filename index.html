@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Aviazon Search</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://github.com/downloads/lafeber/world-flags-sprite/flags16.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/js-datepicker/dist/datepicker.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/1acecd7b72.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <div class="search-container">
+        <form action="" class="flight-search-form">
+          <div class="form-radio-btn-group">
+            <input
+              type="radio"
+              name="trip"
+              value="round-trip"
+              id="round-trip-btn"
+              class="trip-radio-input"
+              checked
+            />
+            <label for="round-trip-btn">Pirmyn ir atgal</label>
+            <input
+              type="radio"
+              name="trip"
+              value="one-way"
+              id="one-way-trip-btn"
+              class="trip-radio-input"
+            />
+            <label for="one-way-trip-btn">Į vieną pusę</label>
+          </div>
+          <div class="search-bar">
+            <div class="form-field">
+              <input
+                type="text"
+                class="form-field__point-a"
+                placeholder="Išvykimo vieta"
+              />
+              <i class="fas fa-map-marker-alt input-icon"></i>
+              <i class="fas fa-exchange-alt input-icon swap-btn"></i>
+              <div
+                class="form-field__autocomplete-box autocomplete-box-a"
+              ></div>
+              <div class="point-a-tooltip hide"></div>
+            </div>
+            <div class="form-field">
+              <input
+                type="text"
+                class="form-field__point-b"
+                placeholder="Atvykimo vieta"
+              />
+              <i class="fas fa-map-marker-alt input-icon"></i>
+              <div
+                class="form-field__autocomplete-box autocomplete-box-b"
+              ></div>
+              <div class="point-b-tooltip hide"></div>
+            </div>
+            <div class="form-field">
+              <input type="text" class="form-field__date-departure" />
+              <i class="far fa-calendar-alt input-icon"></i>
+            </div>
+            <div class="form-field">
+              <input type="text" class="form-field__date-return" />
+              <i class="far fa-calendar-alt input-icon"></i>
+              <i class="far fa-times-circle input-icon clear-btn"></i>
+            </div>
+            <div class="form-field">
+              <div class="click-area">
+                <input
+                  type="text"
+                  disabled
+                  class="click-area__passenger-input"
+                  value="1 Suaugęs"
+                />
+              </div>
+              <i class="fas fa-users input-icon"></i>
+              <i class="fas fa-chevron-down input-icon"></i>
+              <div class="passenger-select-box hide">
+                <div class="passenger-select-row">
+                  <label for="passenger-adult"
+                    >Suaugę<br /><span>12+ m.</span></label
+                  >
+                  <div class="passenger-counter">
+                    <i
+                      class="fas fa-minus-circle counter-icon"
+                      data-passenger="adult"
+                      data-operator="minus"
+                    ></i>
+                    <input type="text" id="passenger-adult" value="1" />
+                    <i
+                      class="fas fa-plus-circle counter-icon"
+                      data-passenger="adult"
+                      data-operator="plus"
+                    ></i>
+                  </div>
+                </div>
+                <div class="passenger-select-row">
+                  <label for="passenger-children"
+                    >Vaikai <br /><span>12-12 m.</span></label
+                  >
+                  <div class="passenger-counter">
+                    <i
+                      class="fas fa-minus-circle counter-icon"
+                      data-passenger="children"
+                      data-operator="minus"
+                    ></i>
+                    <input type="text" id="passenger-children" value="0" />
+                    <i
+                      class="fas fa-plus-circle counter-icon"
+                      data-passenger="children"
+                      data-operator="plus"
+                    ></i>
+                  </div>
+                </div>
+                <div class="passenger-select-row">
+                  <label for="passenger-infant"
+                    >Kūdikiai <br />
+                    <span>iki 2 m.</span></label
+                  >
+                  <div class="passenger-counter">
+                    <i
+                      class="fas fa-minus-circle counter-icon"
+                      data-passenger="infant"
+                      data-operator="minus"
+                    ></i>
+                    <input type="text" id="passenger-infant" value="0" />
+                    <i
+                      class="fas fa-plus-circle counter-icon"
+                      data-passenger="infant"
+                      data-operator="plus"
+                    ></i>
+                  </div>
+                </div>
+                <div class="passenger-submit-row">
+                  <div class="passenger-submit-btn">Gerai</div>
+                </div>
+              </div>
+              <div class="passenger-tooltip hide">test</div>
+            </div>
+            <button type="submit" class="form-submit-btn">Ieškoti</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://unpkg.com/js-datepicker"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
